@@ -1,0 +1,3 @@
+[submodule "External/Enseed/Generic"]
+	path = External/Enseed/Generic
+	url = https://github.com/Enseed/Generic.git
