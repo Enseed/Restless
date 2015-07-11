@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1582D179-7A3D-46CC-B2CA-1C1E63711D0E}</ProjectGuid>
+    <RootNamespace>Restless</RootNamespace>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>..\..;..\..\libs;..\..\Precompiled;C:\Work\Enseed_svn\trunk\ThirdParty\boost</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>..\..;..\..\libs;..\..\Precompiled;C:\Work\Enseed_svn\trunk\ThirdParty\boost</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\build-civetweb\civetweb.lib.vcxproj">
+      <Project>{99544933-ce88-40ee-9aa8-fa8f7eaa47a3}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Exceptions\Backtrace.h" />
+    <ClInclude Include="..\..\HTTP\HttpArguments.h" />
+    <ClInclude Include="..\..\HTTP\HttpBodyInput.h" />
+    <ClInclude Include="..\..\HTTP\HttpBodyOutput.h" />
+    <ClInclude Include="..\..\HTTP\HttpBodySink.h" />
+    <ClInclude Include="..\..\HTTP\HttpBodySource.h" />
+    <ClInclude Include="..\..\HTTP\HttpErrors.h" />
+    <ClInclude Include="..\..\HTTP\HttpExceptionErrors.h" />
+    <ClInclude Include="..\..\HTTP\HttpExceptions.h" />
+    <ClInclude Include="..\..\HTTP\HttpHeaders.h" />
+    <ClInclude Include="..\..\HTTP\HttpMediaType.h" />
+    <ClInclude Include="..\..\HTTP\HttpMethod.h" />
+    <ClInclude Include="..\..\HTTP\HttpQuery.h" />
+    <ClInclude Include="..\..\HTTP\HttpRequest.h" />
+    <ClInclude Include="..\..\HTTP\HttpResponse.h" />
+    <ClInclude Include="..\..\HTTP\HttpResult.h" />
+    <ClInclude Include="..\..\HTTP\HttpStatus.h" />
+    <ClInclude Include="..\..\JSON\Introspection.h" />
+    <ClInclude Include="..\..\JSON\JSON.h" />
+    <ClInclude Include="..\..\libs\CodeProject\Stackwalker\StackWalker.h" />
+    <ClInclude Include="..\..\Precompiled\Precompiled.h" />
+    <ClInclude Include="..\..\WebServer\WebServer.h" />
+    <ClInclude Include="..\..\WebServices\PatternURI.h" />
+    <ClInclude Include="..\..\WebServices\WebDelegator.h" />
+    <ClInclude Include="..\..\WebServices\WebService.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\HTTP\HttpBodyInput.cpp" />
+    <ClCompile Include="..\..\HTTP\HttpBodyOutput.cpp" />
+    <ClCompile Include="..\..\HTTP\HttpBodySink.cpp" />
+    <ClCompile Include="..\..\HTTP\HttpBodySource.cpp" />
+    <ClCompile Include="..\..\HTTP\HttpErrors.cpp" />
+    <ClCompile Include="..\..\HTTP\HttpExceptions.cpp" />
+    <ClCompile Include="..\..\HTTP\HttpHeaders.cpp" />
+    <ClCompile Include="..\..\HTTP\HttpMediaType.cpp" />
+    <ClCompile Include="..\..\HTTP\HttpMethod.cpp" />
+    <ClCompile Include="..\..\HTTP\HttpQuery.cpp" />
+    <ClCompile Include="..\..\HTTP\HttpRequest.cpp" />
+    <ClCompile Include="..\..\HTTP\HttpResponse.cpp" />
+    <ClCompile Include="..\..\HTTP\HttpResult.cpp" />
+    <ClCompile Include="..\..\HTTP\HttpStatus.cpp" />
+    <ClCompile Include="..\..\JSON\Introspection.cpp" />
+    <ClCompile Include="..\..\JSON\JSON.cpp" />
+    <ClCompile Include="..\..\libs\CodeProject\Stackwalker\StackWalker.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\Precompiled\Precompiled.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\WebServer\WebServer.cpp" />
+    <ClCompile Include="..\..\WebServices\PatternURI.cpp" />
+    <ClCompile Include="..\..\WebServices\WebDelegator.cpp" />
+    <ClCompile Include="..\..\WebServices\WebService.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

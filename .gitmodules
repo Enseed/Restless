@@ -1,0 +1,24 @@
+[submodule "libs/civetweb"]
+	path = libs/civetweb
+	url = https://github.com/sunsetbrew/civetweb.git
+[submodule "libs/Enseed/Generic/CountPtr"]
+	path = libs/Enseed/Generic/CountPtr
+	url = https://github.com/Enseed/GenericCountPtr.git
+[submodule "libs/Enseed/Generic/Base"]
+	path = libs/Enseed/Generic/Base
+	url = https://github.com/Enseed/GenericBase.git
+[submodule "libs/Enseed/Generic/Devel"]
+	path = libs/Enseed/Generic/Devel
+	url = https://github.com/Enseed/GenericDevel.git
+[submodule "libs/Enseed/Generic/Atomic"]
+	path = libs/Enseed/Generic/Atomic
+	url = https://github.com/Enseed/GenericAtomic.git
+[submodule "libs/Enseed/Generic/Strings"]
+	path = libs/Enseed/Generic/Strings
+	url = https://github.com/Enseed/GenericStrings.git
+[submodule "libs/Enseed/Generic/AutoPtr"]
+	path = libs/Enseed/Generic/AutoPtr
+	url = https://github.com/Enseed/GenericAutoPtr.git
+[submodule "libs/Enseed/Season"]
+	path = libs/Enseed/Season
+	url = https://github.com/Enseed/Season.git
