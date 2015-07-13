@@ -17,10 +17,11 @@ const std::string& HttpResult::bytes() const
 	return mBytes;
 }
 
-void HttpResult::setBytes(const std::string &bytes, const std::string &format)
+HttpResult* HttpResult::setBytes(const std::string &bytes, const std::string &format)
 {
 	mBytes = bytes;
 	mContentType = format;
+	return this;
 }
 
 std::string HttpResult::status() const
@@ -33,15 +34,16 @@ HttpStatus HttpResult::statusCode() const
 	return mStatusCode;
 }
 
-void HttpResult::setStatus(HttpStatus code, const std::string &message)
+HttpResult* HttpResult::setStatus(HttpStatus code, const std::string &message)
 {
 	mStatusCode = code;
 	mStatus = message;
+	return this;
 }
 
-void HttpResult::setStatus(HttpStatus code)
+HttpResult* HttpResult::setStatus(HttpStatus code)
 {
-	setStatus(code, code.defaultMessage());
+	return setStatus(code, code.defaultMessage());
 }
 
 HttpResult::HttpResult() : mStatusCode(HttpStatus::eOK)

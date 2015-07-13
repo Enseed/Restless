@@ -1,6 +1,5 @@
 #pragma once
-
-#include "JSON/JSON.h"
+/*
 #include "HttpResult.h"
 #include "HttpMediaType.h"
 #include "HttpExceptionErrors.h"
@@ -47,5 +46,5 @@ public:
 		setBytes(JSONParser::toJSON(dto), HttpMediaType::APPLICATION_JSON);
 	}
 };
-
+*/
 

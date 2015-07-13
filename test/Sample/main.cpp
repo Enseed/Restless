@@ -1,8 +1,18 @@
-#include "Enseed/Restless/WebServer/WebServer.h"
-#include "Enseed/Restless/WebServices/WebService.h"
+#include <Enseed/Restless/WebServer/WebServer.h>
+#include <Enseed/Restless/WebServices/WebService.h>
+#include <Enseed/Restless/HTTP/HttpMediaType.h>
+#include <Enseed/Restless/HTTP/HttpResult.h>
 
 class HelloWorldWebService : public restless::WebService
 {
+public:
+	HelloWorldWebService()
+	{
+		onGet("/", [](const HttpRequest &request, const HttpArguments &args) {
+			return (new HttpResult())->setBytes("Hello World!!!", HttpMediaType::TEXT_PLAIN);
+		});
+	}
+
 
 };
 

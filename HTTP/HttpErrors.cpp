@@ -1,5 +1,5 @@
 #include "Precompiled.h"
-
+/*
 #include "HttpErrors.h"
 #include "HttpExceptionErrors.h"
 
@@ -41,3 +41,4 @@ seed::AutoPtr<HttpResult> HttpErrors::createFromException(const std::exception &
 		return new HttpExceptionError<std::exception>(static_cast<const std::exception&>(ex));
 	}
 }
+*/

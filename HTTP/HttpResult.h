@@ -14,9 +14,9 @@ public:
 	std::string mContentType;
 	HttpHeaders mHeaders;
 
-	void setStatus(HttpStatus code);
-	void setStatus(HttpStatus code, const std::string &message);
-	void setBytes(const std::string &bytes, const std::string &format);
+	HttpResult* setStatus(HttpStatus code);
+	HttpResult* setStatus(HttpStatus code, const std::string &message);
+	HttpResult* setBytes(const std::string &bytes, const std::string &format);
 
 	HttpStatus statusCode() const;
 	std::string status() const;

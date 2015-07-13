@@ -97,8 +97,6 @@
     <ClInclude Include="..\..\HTTP\HttpResponse.h" />
     <ClInclude Include="..\..\HTTP\HttpResult.h" />
     <ClInclude Include="..\..\HTTP\HttpStatus.h" />
-    <ClInclude Include="..\..\JSON\Introspection.h" />
-    <ClInclude Include="..\..\JSON\JSON.h" />
     <ClInclude Include="..\..\libs\CodeProject\Stackwalker\StackWalker.h" />
     <ClInclude Include="..\..\Precompiled\Precompiled.h" />
     <ClInclude Include="..\..\WebServer\WebServer.h" />
@@ -121,8 +119,6 @@
     <ClCompile Include="..\..\HTTP\HttpResponse.cpp" />
     <ClCompile Include="..\..\HTTP\HttpResult.cpp" />
     <ClCompile Include="..\..\HTTP\HttpStatus.cpp" />
-    <ClCompile Include="..\..\JSON\Introspection.cpp" />
-    <ClCompile Include="..\..\JSON\JSON.cpp" />
     <ClCompile Include="..\..\libs\CodeProject\Stackwalker\StackWalker.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>

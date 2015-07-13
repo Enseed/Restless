@@ -13,7 +13,6 @@
 #include "boost/uuid/random_generator.hpp"
 #include <boost/uuid/uuid_io.hpp>
 #include <boost/uuid/uuid.hpp>
-#include "HTTP/HttpDTOResult.h"
 #include "HTTP/HttpMediaType.h"
 
 namespace restless {
@@ -75,13 +74,13 @@ namespace restless {
 
 		static int http_error(mg_connection *connection, int statusCode)
 		{
-			ErrorDTO errorDTO;
+/*			ErrorDTO errorDTO;
 			errorDTO.id = boost::uuids::random_generator()();
 			errorDTO.message = HttpStatus::fromInt(statusCode).defaultMessage();
 			errorDTO.time = boost::posix_time::ptime();
 			HttpResult *result = HttpDTOResult::createFromDTO(errorDTO, HttpMediaType::APPLICATION_JSON);
 			HttpResponse response(connection);
-
+*/
 			mg_context *ctx = mg_get_context(connection);
 			WebServerImp *me = (WebServerImp *)mg_get_user_data(ctx);
 			return me->_intrf.onError(connection, statusCode);
@@ -126,7 +125,7 @@ namespace restless {
 				}
 				catch (const std::exception &ex)
 				{
-					result = HttpErrors::createFromException(ex).givePtr();
+					result = (new HttpResult)->setStatus(HttpStatus::eSERVER_ERROR);//HttpErrors::createFromException(ex).givePtr();
 				}
 
 				if (result != nullptr)
@@ -164,7 +163,7 @@ namespace restless {
 				}
 				catch (const std::exception &ex)
 				{
-					result = HttpErrors::createFromException(ex).givePtr();
+					result = (new HttpResult)->setStatus(HttpStatus::eSERVER_ERROR);//HttpErrors::createFromException(ex).givePtr();
 				}
 
 				if (result != nullptr)
@@ -202,11 +201,12 @@ namespace restless {
 				}
 				catch (const std::exception &ex)
 				{
-					result = HttpErrors::createFromException(ex).givePtr();
+					result = (new HttpResult)->setStatus(HttpStatus::eSERVER_ERROR);//HttpErrors::createFromException(ex).givePtr();
 				}
 				catch (...)
 				{
-					result = HttpErrors::createFromException(HttpServerErrorException()).givePtr();
+					result = (new HttpResult)->setStatus(HttpStatus::eSERVER_ERROR);//HttpErrors::createFromException(ex).givePtr();
+					//result = HttpErrors::createFromException(HttpServerErrorException()).givePtr();
 				}
 
 				if (result != nullptr)
@@ -244,7 +244,7 @@ namespace restless {
 				}
 				catch (const std::exception &ex)
 				{
-					result = HttpErrors::createFromException(ex).givePtr();
+					result = (new HttpResult)->setStatus(HttpStatus::eSERVER_ERROR);//HttpErrors::createFromException(ex).givePtr();
 				}
 
 				if (result != nullptr)
@@ -282,7 +282,7 @@ namespace restless {
 				}
 				catch (const std::exception &ex)
 				{
-					result = HttpErrors::createFromException(ex).givePtr();
+					result = (new HttpResult)->setStatus(HttpStatus::eSERVER_ERROR);//HttpErrors::createFromException(ex).givePtr();
 				}
 
 				if (result != nullptr)

@@ -38,9 +38,3 @@ THE SOFTWARE.
 
 #define BOOST_OPTIONAL_USE_OLD_DEFINITION_OF_NONE
 
-#include "boost/property_tree/ptree.hpp"
-#include "boost/property_tree/json_parser.hpp"
-#include "C:\Work\Enseed_svn\trunk\Applications\Mediatheque\win32\Mediatek\RESTSchema\schema\generated\Class.h"
-#include "C:\Work\Enseed_svn\trunk\Applications\Mediatheque\win32\Mediatek\RESTSchema\schema\generated\meta_mapping.h"
-#include "C:\Work\Enseed_svn\trunk\Applications\Mediatheque\win32\Mediatek\RESTSchema\schema\generated\IDTO_mapping.h"
-#include "C:\Work\Enseed_svn\trunk\Applications\Mediatheque\win32\Mediatek\RESTSchema\schema\generated\types.h"
