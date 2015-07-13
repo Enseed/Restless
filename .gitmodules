@@ -1,6 +1,6 @@
 [submodule "libs/civetweb"]
 	path = libs/civetweb
-	url = https://github.com/sunsetbrew/civetweb.git
+url=https://github.com/Enseed/civetweb.git
 [submodule "libs/Enseed/Generic/CountPtr"]
 	path = libs/Enseed/Generic/CountPtr
 	url = https://github.com/Enseed/GenericCountPtr.git
