@@ -20,6 +20,13 @@ class Stacktrace
 		}
 
 	protected:
+		virtual void OnLoadModule(LPCSTR img, LPCSTR mod, DWORD64 baseAddr, DWORD size, DWORD result, LPCSTR symType, LPCSTR pdbName, ULONGLONG fileVersion) override
+		{}
+
+		virtual void OnDbgHelpErr(LPCSTR szFuncName, DWORD gle, DWORD64 addr) override
+		{}
+
+
 		virtual void OnOutput(LPCSTR szText)
 		{
 			mStackStringStream << szText;

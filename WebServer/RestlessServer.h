@@ -1,18 +1,20 @@
-#ifndef __WRAPPER_WEBSERVER_H__
-#define __WRAPPER_WEBSERVER_H__
-
+#ifndef __WRAPPER_RESTLESSSERVER_H__
+#define __WRAPPER_RESTLESSSERVER_H__
+	
 #include "Enseed/Generic/AutoPtr/AutoPtr.h"
 #include "../WebServices/WebDelegator.h"
+#include "../HTTP/HttpResult.h"
+#include <exception>
 
 struct mg_connection;
 
 namespace restless {
 
-	class WebServer : public WebDelegator
+	class RestlessServer : public WebDelegator
 	{
 	public:
-		WebServer(int port);
-		virtual ~WebServer();
+		RestlessServer(int port);
+		virtual ~RestlessServer();
 
 		virtual int onBeginRequest(mg_connection *connection) { return 0; }
 		virtual void onFinishRequest(const mg_connection *connection, int statusCode) { }
@@ -20,17 +22,19 @@ namespace restless {
 		virtual int onLogAccess(const mg_connection *connection, const char *message) { return 0; }
 		virtual int onLogMessage(const mg_connection *connection, const char *message) { return 0; }
 
+		virtual sd::AutoPtr<HttpResult> onException(mg_connection *connection, const std::exception &exception) { return nullptr; }
+
 	public:
-		class WebServerImp;
+		class RestlessServerImp;
 
 	private:
-		seed::AutoPtr<WebServerImp> mImp;
+		seed::AutoPtr<RestlessServerImp> mImp;
 
 	private:
-		WebServer(WebServer &);
-		WebServer& operator=(const WebServer&);
+		RestlessServer(RestlessServer &);
+		RestlessServer& operator=(const RestlessServer&);
 	};
 
 } // namespace restless
 
-#endif // __WRAPPER_WEBSERVER_H__
+#endif // __WRAPPER_RESTLESSSERVER_H__

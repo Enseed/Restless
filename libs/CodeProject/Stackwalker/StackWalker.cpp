@@ -1183,35 +1183,42 @@ void StackWalker::OnDbgHelpErr(LPCSTR szFuncName, DWORD gle, DWORD64 addr)
   OnOutput(buffer);
 }
 
+#ifdef _MSC_VER
+#include <Lm.h>
+void GetWindowsVersion(DWORD *major, DWORD *minor, DWORD *revision)
+{
+	LPBYTE pinfoRawData;
+	if (NERR_Success == NetWkstaGetInfo(NULL, 100, &pinfoRawData))
+	{
+		WKSTA_INFO_100 * pworkstationInfo = (WKSTA_INFO_100 *)pinfoRawData;
+		*major = pworkstationInfo->wki100_ver_major;
+		*minor = pworkstationInfo->wki100_ver_minor;
+		*revision = 0;
+		NetApiBufferFree(pinfoRawData);
+	}
+}
+#else
+void GetWindowsVersion(DWORD *major, DWORD *minor, DWORD *revision)
+{
+	dwVersion = GetVersion();
+	*major = (DWORD)(LOBYTE(LOWORD(dwVersion)));
+	*minor = (DWORD)(HIBYTE(LOWORD(dwVersion)));
+	*revision = ((dwVersion < 0x80000000) ? (DWORD)(HIWORD(dwVersion)) : 0);
+}
+#endif
+
+
 void StackWalker::OnSymInit(LPCSTR szSearchPath, DWORD symOptions, LPCSTR szUserName)
 {
   CHAR buffer[STACKWALK_MAX_NAMELEN];
   _snprintf_s(buffer, STACKWALK_MAX_NAMELEN, "SymInit: Symbol-SearchPath: '%s', symOptions: %d, UserName: '%s'\n", szSearchPath, symOptions, szUserName);
   OnOutput(buffer);
   // Also display the OS-version
-#if _MSC_VER <= 1200
-  OSVERSIONINFOA ver;
-  ZeroMemory(&ver, sizeof(OSVERSIONINFOA));
-  ver.dwOSVersionInfoSize = sizeof(ver);
-  if (GetVersionExA(&ver) != FALSE)
-  {
-    _snprintf_s(buffer, STACKWALK_MAX_NAMELEN, "OS-Version: %d.%d.%d (%s)\n", 
-      ver.dwMajorVersion, ver.dwMinorVersion, ver.dwBuildNumber,
-      ver.szCSDVersion);
-    OnOutput(buffer);
-  }
-#else
-  OSVERSIONINFOEXA ver;
-  ZeroMemory(&ver, sizeof(OSVERSIONINFOEXA));
-  ver.dwOSVersionInfoSize = sizeof(ver);
-/*  if (GetVersionExA( (OSVERSIONINFOA*) &ver) != FALSE)
-  {
-    _snprintf_s(buffer, STACKWALK_MAX_NAMELEN, "OS-Version: %d.%d.%d (%s) 0x%x-0x%x\n", 
-      ver.dwMajorVersion, ver.dwMinorVersion, ver.dwBuildNumber,
-      ver.szCSDVersion, ver.wSuiteMask, ver.wProductType);
-    OnOutput(buffer);
-  }*/
-#endif
+  DWORD major = 0, minor = 0, rev = 0;
+  GetWindowsVersion(&major, &minor, &rev);
+  _snprintf_s(buffer, STACKWALK_MAX_NAMELEN, "OS-Version: %d.%d.%d\n", 
+	  major, minor, rev);
+  OnOutput(buffer);
 }
 
 void StackWalker::OnOutput(LPCSTR buffer)

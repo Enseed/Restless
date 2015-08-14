@@ -77,6 +77,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\libs\build-civetweb\civetweb.lib.vcxproj">
       <Project>{99544933-ce88-40ee-9aa8-fa8f7eaa47a3}</Project>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -86,7 +88,6 @@
     <ClInclude Include="..\..\HTTP\HttpBodyOutput.h" />
     <ClInclude Include="..\..\HTTP\HttpBodySink.h" />
     <ClInclude Include="..\..\HTTP\HttpBodySource.h" />
-    <ClInclude Include="..\..\HTTP\HttpErrors.h" />
     <ClInclude Include="..\..\HTTP\HttpExceptionErrors.h" />
     <ClInclude Include="..\..\HTTP\HttpExceptions.h" />
     <ClInclude Include="..\..\HTTP\HttpHeaders.h" />
@@ -99,7 +100,7 @@
     <ClInclude Include="..\..\HTTP\HttpStatus.h" />
     <ClInclude Include="..\..\libs\CodeProject\Stackwalker\StackWalker.h" />
     <ClInclude Include="..\..\Precompiled\Precompiled.h" />
-    <ClInclude Include="..\..\WebServer\WebServer.h" />
+    <ClInclude Include="..\..\WebServer\RestlessServer.h" />
     <ClInclude Include="..\..\WebServices\PatternURI.h" />
     <ClInclude Include="..\..\WebServices\WebDelegator.h" />
     <ClInclude Include="..\..\WebServices\WebService.h" />
@@ -109,7 +110,6 @@
     <ClCompile Include="..\..\HTTP\HttpBodyOutput.cpp" />
     <ClCompile Include="..\..\HTTP\HttpBodySink.cpp" />
     <ClCompile Include="..\..\HTTP\HttpBodySource.cpp" />
-    <ClCompile Include="..\..\HTTP\HttpErrors.cpp" />
     <ClCompile Include="..\..\HTTP\HttpExceptions.cpp" />
     <ClCompile Include="..\..\HTTP\HttpHeaders.cpp" />
     <ClCompile Include="..\..\HTTP\HttpMediaType.cpp" />
@@ -127,7 +127,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="..\..\WebServer\WebServer.cpp" />
+    <ClCompile Include="..\..\WebServer\RestlessServer.cpp" />
     <ClCompile Include="..\..\WebServices\PatternURI.cpp" />
     <ClCompile Include="..\..\WebServices\WebDelegator.cpp" />
     <ClCompile Include="..\..\WebServices\WebService.cpp" />

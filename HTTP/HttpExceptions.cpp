@@ -2,7 +2,7 @@
 #include "HttpExceptions.h"
 #include <stdarg.h>
 #include "Enseed/Generic/Strings/Strings.h"
-#include "Exceptions/Backtrace.h"
+#include "../Exceptions/Backtrace.h"
 
 
 HttpClientErrorException::HttpClientErrorException(const HttpStatus &status, const char *message, ...) 
