@@ -30,3 +30,5 @@
 *.sdf
 **/Debug/
 **/ipch/
+**/.vs/
+**/Release/*

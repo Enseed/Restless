@@ -2,7 +2,7 @@
 
 #include "WebDelegator.h"
 #include "boost/function.hpp"
-#include "Enseed/Generic/AutoPtr/AutoPtr.h"
+#include "Generic/AutoPtr/AutoPtr.h"
 
 class HttpRequest;
 class HttpArguments;

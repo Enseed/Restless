@@ -1,9 +1,9 @@
 #include "Precompiled.h"
 #include "WebService.h"
-#include "WebServices/PatternURI.h"
-#include "HTTP/HttpArguments.h"
-#include "HTTP/HttpExceptions.h"
-#include "HTTP/HttpResult.h"
+#include "PatternURI.h"
+#include "../HTTP/HttpArguments.h"
+#include "../HTTP/HttpExceptions.h"
+#include "../HTTP/HttpResult.h"
 #include <civetweb/include/CivetServer.h>
 
 

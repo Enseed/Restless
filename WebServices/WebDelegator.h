@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Enseed/Generic/CountPtr/CountPtr.h>
+#include <Generic/CountPtr/CountPtr.h>
 #include <map>
 
 namespace restless { class WebService; }

@@ -2,12 +2,12 @@
 
 #include "RestlessServer.h"
 #include <civetweb/include/CivetServer.h>
-#include "HTTP/HttpArguments.h"
-#include "HTTP/HttpRequest.h"
-#include "HTTP/HttpResponse.h"
-#include "WebServices/PatternURI.h"
-#include "WebServices/WebService.h"
-#include "HTTP/HttpResult.h"
+#include "../HTTP/HttpArguments.h"
+#include "../HTTP/HttpRequest.h"
+#include "../HTTP/HttpResponse.h"
+#include "../WebServices/PatternURI.h"
+#include "../WebServices/WebService.h"
+#include "../HTTP/HttpResult.h"
 
 namespace restless {
 

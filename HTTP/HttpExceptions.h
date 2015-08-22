@@ -3,7 +3,7 @@
 #include <exception>
 #include <string>
 #include "HttpStatus.h"
-#include <Enseed/Generic/Strings/Strings.h>
+#include <Generic/Strings/Strings.h>
 #include "boost/optional/optional.hpp"
 
 class HttpException : public std::exception

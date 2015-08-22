@@ -1,5 +1,5 @@
 #pragma once
-#include <CodeProject/Stackwalker/StackWalker.h>
+#include <Stackwalker/StackWalker.h>
 #include <string>
 
 class Stacktrace

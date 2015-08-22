@@ -1,7 +1,7 @@
 #pragma once
 
 #include <map>
-#include <Enseed/Generic/Strings/Strings.h>
+#include <Generic/Strings/Strings.h>
 
 class PatternURI
 {

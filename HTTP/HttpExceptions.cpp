@@ -1,7 +1,7 @@
 #include "Precompiled.h"
 #include "HttpExceptions.h"
 #include <stdarg.h>
-#include "Enseed/Generic/Strings/Strings.h"
+#include "Generic/Strings/Strings.h"
 #include "../Exceptions/Backtrace.h"
 
 

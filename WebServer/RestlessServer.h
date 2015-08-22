@@ -1,7 +1,7 @@
 #ifndef __WRAPPER_RESTLESSSERVER_H__
 #define __WRAPPER_RESTLESSSERVER_H__
 	
-#include "Enseed/Generic/AutoPtr/AutoPtr.h"
+#include "Generic/AutoPtr/AutoPtr.h"
 #include "../WebServices/WebDelegator.h"
 #include "../HTTP/HttpResult.h"
 #include <exception>

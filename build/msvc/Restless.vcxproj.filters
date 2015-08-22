@@ -131,9 +131,6 @@
     <ClCompile Include="..\..\Precompiled\Precompiled.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\libs\CodeProject\Stackwalker\StackWalker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\WebServices\PatternURI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

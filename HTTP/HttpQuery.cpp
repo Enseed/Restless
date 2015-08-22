@@ -1,7 +1,7 @@
 #include "Precompiled.h"
 #include "HttpQuery.h"
 #include <civetweb/include/CivetServer.h>
-#include "Enseed/Generic/Strings/Strings.h"
+#include "Generic/Strings/Strings.h"
 
 
 
